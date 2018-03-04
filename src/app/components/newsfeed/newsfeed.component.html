@@ -1,0 +1,24 @@
+<div style="text-align:center">
+      
+        <div *ngFor="let Article of Articles;">
+                <mat-card >
+                        <mat-card-header>
+                                <mat-card-title><h2>{{Article.title}}</h2></mat-card-title>
+                              <mat-card-subtitle *ngIf = "Article.author">Author : {{Article.author}}</mat-card-subtitle>
+                        </mat-card-header>
+                         <br><br>
+                        <div *ngIf= "Article.urlToImage"><img mat-card-image src = {{Article.urlToImage}} ></div> 
+                         <div *ngIf= "Article.description">
+                              <mat-card-content>
+                                <p>
+                                    {{Article.description}}
+                                </p>
+                              </mat-card-content>
+                        </div>
+                        <mat-card-footer><p>published On : <time>{{Article.publishedAt | date}}</time> &nbsp; &nbsp; source : {{Article.source.name}}</p> </mat-card-footer>
+                    </mat-card>
+                    <br>
+        </div>
+           
+       
+</div>
